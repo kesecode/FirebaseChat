@@ -10,8 +10,8 @@
 		211503D3121369120FB4D4BF /* Pods_FirebaseChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDBC1D7A52DB386B623BDD9 /* Pods_FirebaseChatTests.framework */; };
 		37692CAEC12E70AD77C1416F /* Pods_FirebaseChat_FirebaseChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECFD1B47316BF3A1B0C449 /* Pods_FirebaseChat_FirebaseChatUITests.framework */; };
 		8600ECFBBE9F4581CB4389B7 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B67FA92AB35A91450DEA93C /* Pods_FirebaseChat.framework */; };
-		C07AD8DA25C0797A00974978 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07AD8D925C0797A00974978 /* GoogleService-Info.plist */; };
-		C07AD8DB25C0797A00974978 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07AD8D925C0797A00974978 /* GoogleService-Info.plist */; };
+		C07AD91325C09F3400974978 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07AD91225C09F3300974978 /* GoogleService-Info.plist */; };
+		C07AD91425C09F3400974978 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07AD91225C09F3300974978 /* GoogleService-Info.plist */; };
 		C09B184C25C06260006616B1 /* FirebaseChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09B184B25C06260006616B1 /* FirebaseChatApp.swift */; };
 		C09B184E25C06260006616B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09B184D25C06260006616B1 /* ContentView.swift */; };
 		C09B185025C06261006616B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09B184F25C06261006616B1 /* Assets.xcassets */; };
@@ -48,7 +48,7 @@
 		8B67FA92AB35A91450DEA93C /* Pods_FirebaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		946AD8D18D4575F3FF5B55C9 /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 		BE48C7BC4DC2B514407F325B /* Pods-FirebaseChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatTests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChatTests/Pods-FirebaseChatTests.release.xcconfig"; sourceTree = "<group>"; };
-		C07AD8D925C0797A00974978 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C07AD91225C09F3300974978 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C09B184825C06260006616B1 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09B184B25C06260006616B1 /* FirebaseChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatApp.swift; sourceTree = "<group>"; };
 		C09B184D25C06260006616B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				C09B184B25C06260006616B1 /* FirebaseChatApp.swift */,
 				C09B184F25C06261006616B1 /* Assets.xcassets */,
 				C09B185425C06261006616B1 /* Info.plist */,
-				C07AD8D925C0797A00974978 /* GoogleService-Info.plist */,
+				C07AD91225C09F3300974978 /* GoogleService-Info.plist */,
 				C09B188925C06925006616B1 /* Model */,
 				C09B188825C06904006616B1 /* View */,
 				C09B185125C06261006616B1 /* Preview Content */,
@@ -309,7 +309,7 @@
 			files = (
 				C09B185325C06261006616B1 /* Preview Assets.xcassets in Resources */,
 				C09B185025C06261006616B1 /* Assets.xcassets in Resources */,
-				C07AD8DA25C0797A00974978 /* GoogleService-Info.plist in Resources */,
+				C07AD91325C09F3400974978 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C07AD8DB25C0797A00974978 /* GoogleService-Info.plist in Resources */,
+				C07AD91425C09F3400974978 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

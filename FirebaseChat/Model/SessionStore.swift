@@ -24,7 +24,7 @@ class SessionStore: ObservableObject {
         })
     }
     
-    func signUp(email: String, password: String, handler: @escaping AuthDataResultCallback) {
+    func signUp(firstName: String, lastName: String, email: String, password: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
     }
     

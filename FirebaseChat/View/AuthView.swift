@@ -82,19 +82,26 @@ struct SignInView: View {
 }
 
 struct SignUpView: View {
+    @State var firstName: String = ""
+    @State var lastName: String = ""
     @State var email: String = ""
     @State var password: String = ""
+    @State var passwordConfirmation: String = ""
     @State var error: String = ""
     @EnvironmentObject var session: SessionStore
     
     func signUp() {
-        session.signUp(email: email, password: password) { (result, error) in
-            if let error = error {
-                self.error = error.localizedDescription
-            } else {
-                self.email = ""
-                self.password = ""
+        if (password == passwordConfirmation) {
+            session.signUp(firstName: firstName, lastName: lastName, email: email, password: password) { (result, error) in
+                if let error = error {
+                    self.error = error.localizedDescription
+                } else {
+                    self.email = ""
+                    self.password = ""
+                }
             }
+        } else {
+            self.error = "Passwords didn't match"
         }
     }
     
@@ -108,12 +115,27 @@ struct SignUpView: View {
                 .foregroundColor(Color("Gray"))
             
             VStack(spacing: 18) {
+                TextField("First name", text: $firstName)
+                    .font(.system(size: 14))
+                    .padding(12)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bg1"), lineWidth: 1))
+                
+                TextField("Last name", text: $lastName)
+                    .font(.system(size: 14))
+                    .padding(12)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bg1"), lineWidth: 1))
+                
                 TextField("Email address", text: $email)
                     .font(.system(size: 14))
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bg1"), lineWidth: 1))
                 
                 SecureField("Password", text: $password)
+                    .font(.system(size: 14))
+                    .padding(12)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bg1"), lineWidth: 1))
+                
+                SecureField("Confirm password", text: $passwordConfirmation)
                     .font(.system(size: 14))
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bg1"), lineWidth: 1))
@@ -151,6 +173,6 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView().environmentObject(SessionStore())
+        SignUpView().environmentObject(SessionStore())
     }
 }
