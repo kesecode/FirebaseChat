@@ -6,13 +6,15 @@ target 'FirebaseChat' do
   use_frameworks!
 
   # Pods for FirebaseChat
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
+  	pod 'GoogleUtilities'
+  	pod 'Firebase/Analytics'
+  	pod 'Firebase/Auth'
 
   target 'FirebaseChatTests' do
     inherit! :search_paths
-    # Pods for testing
-    pod 'Firebase/Auth'
+	# Pods for testing
+	pod 'GoogleUtilities'
+    	pod 'Firebase/Auth'
   end
 
   target 'FirebaseChatUITests' do

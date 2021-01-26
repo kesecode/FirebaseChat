@@ -20,6 +20,8 @@
 #import "GULSecureCoding.h"
 #import "GULURLSessionDataResponse.h"
 #import "NSURLSession+GULPromises.h"
+#import "GULObjectSwizzler.h"
+#import "GULSwizzledObject.h"
 #import "GULLogger.h"
 #import "GULLoggerLevel.h"
 #import "GULOriginalIMPConvenienceMacros.h"
@@ -32,6 +34,7 @@
 #import "GULNetworkMessageCode.h"
 #import "GULNetworkURLSession.h"
 #import "GULReachabilityChecker.h"
+#import "GULSwizzler+Unswizzle.h"
 #import "GULUserDefaults.h"
 
 FOUNDATION_EXPORT double GoogleUtilitiesVersionNumber;
