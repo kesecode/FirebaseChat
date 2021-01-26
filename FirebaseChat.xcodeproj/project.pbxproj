@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,8 @@
 		C09B188C25C0695E006616B1 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09B188A25C0695E006616B1 /* SessionStore.swift */; };
 		C09B189425C0696E006616B1 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09B189325C0696E006616B1 /* AuthView.swift */; };
 		C09B189525C0696E006616B1 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09B189325C0696E006616B1 /* AuthView.swift */; };
+		C0CFDD2C25C06CC100F8B7FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0CFDD2B25C06CC100F8B7FD /* GoogleService-Info.plist */; };
+		C0CFDD2D25C06CC100F8B7FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0CFDD2B25C06CC100F8B7FD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 		C09B186A25C06262006616B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C09B188A25C0695E006616B1 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		C09B189325C0696E006616B1 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		C0CFDD2B25C06CC100F8B7FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7D01058662E0A0FC3571928 /* Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat-FirebaseChatUITests/Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F80C1C611EA5A310B5B09AB7 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
 		FCDBC1D7A52DB386B623BDD9 /* Pods_FirebaseChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +134,7 @@
 				C09B184B25C06260006616B1 /* FirebaseChatApp.swift */,
 				C09B184F25C06261006616B1 /* Assets.xcassets */,
 				C09B185425C06261006616B1 /* Info.plist */,
+				C0CFDD2B25C06CC100F8B7FD /* GoogleService-Info.plist */,
 				C09B188925C06925006616B1 /* Model */,
 				C09B188825C06904006616B1 /* View */,
 				C09B185125C06261006616B1 /* Preview Content */,
@@ -191,7 +195,6 @@
 				2FDB28A6EB60E6D19A2F6080 /* Pods-FirebaseChatTests.debug.xcconfig */,
 				BE48C7BC4DC2B514407F325B /* Pods-FirebaseChatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -306,6 +309,7 @@
 			files = (
 				C09B185325C06261006616B1 /* Preview Assets.xcassets in Resources */,
 				C09B185025C06261006616B1 /* Assets.xcassets in Resources */,
+				C0CFDD2C25C06CC100F8B7FD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0CFDD2D25C06CC100F8B7FD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
