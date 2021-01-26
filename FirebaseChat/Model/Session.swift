@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+
 import Firebase
+
 import Combine
 
 class Session: ObservableObject {
+    
     var didChange = PassthroughSubject<Session, Never>()
+    
     @Published var session: User? {didSet {didChange.send(self)}}
+    
     var handle: AuthStateDidChangeListenerHandle?
+    
     
     func listen() {
         handle = Auth.auth().addStateDidChangeListener({(auth, user) in
@@ -26,6 +32,7 @@ class Session: ObservableObject {
     
     func signUp(firstName: String, lastName: String, email: String, password: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
+        Persistence.firestore.insertUser(firstName: firstName, lastName: lastName, email: email)
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
