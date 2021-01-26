@@ -11,7 +11,7 @@ struct SignInView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var error: String = ""
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: Session
     
     func signIn() {
         session.signIn(email: email, password: password) { (result, error) in
@@ -88,7 +88,7 @@ struct SignUpView: View {
     @State var password: String = ""
     @State var passwordConfirmation: String = ""
     @State var error: String = ""
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: Session
     
     func signUp() {
         if (password == passwordConfirmation) {
@@ -173,6 +173,6 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView().environmentObject(SessionStore())
+        SignUpView().environmentObject(Session())
     }
 }

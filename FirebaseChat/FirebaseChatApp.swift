@@ -16,7 +16,7 @@ struct firebaseDemoAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(SessionStore())
+            ContentView().environmentObject(Session())
         }
     }
 }

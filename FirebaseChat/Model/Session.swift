@@ -1,5 +1,5 @@
 //
-//  SessionStore.swift
+//  Session.swift
 //  FirebaseChat
 //
 //  Created by David Weppler on 26.01.21.
@@ -9,9 +9,9 @@ import SwiftUI
 import Firebase
 import Combine
 
-class SessionStore: ObservableObject {
-    var didChange = PassthroughSubject<SessionStore, Never>()
-    @Published var session: User? {didSet {self.didChange.send(self)}}
+class Session: ObservableObject {
+    var didChange = PassthroughSubject<Session, Never>()
+    @Published var session: User? {didSet {didChange.send(self)}}
     var handle: AuthStateDidChangeListenerHandle?
     
     func listen() {
