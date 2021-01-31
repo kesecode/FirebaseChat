@@ -1,0 +1,14 @@
+/* 
+  localizable.strings
+  FirebaseChat
+
+  Created by David Weppler on 30.01.21.
+  
+*/
+"WELCOME_BACK" = "Welcome back";
+"SIGN_IN_TO_CONTINUE" = "Sign in to continue";
+"EMAIL" = "E-Mail";
+"PASSWORD" = "Password";
+"SIGN_IN" = "Sign in";
+"CREATE_AN_ACCOUNT" = "Create an account";
+"IM_A_NEW_USER" = "I'm a new user";

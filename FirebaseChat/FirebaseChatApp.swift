@@ -9,14 +9,16 @@ import SwiftUI
 import Firebase
 
 @main
-struct firebaseDemoAppApp: App {
+struct FirebaseChatApp: App {
+    @AppStorage("login_state") var loginState = false
+
     init() {
-        FirebaseApp.configure()
+          FirebaseApp.configure()
       }
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(Session())
+            RootView().environmentObject(Session())
         }
     }
 }
