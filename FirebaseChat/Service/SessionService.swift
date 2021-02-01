@@ -14,7 +14,7 @@ import SwiftUI
 import Combine
 
 
-final class SessionService: ObservableObject {
+final class SessionService: ObservableObject, SessionServiceProtocol {
     static var session = PassthroughSubject<SessionService, Never>()
 
     @AppStorage("login_state") var loginState = false
@@ -73,4 +73,9 @@ final class SessionService: ObservableObject {
     deinit {
         unbind()
     }
+}
+
+
+protocol SessionServiceProtocol {
+    func login(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void)
 }
