@@ -13,22 +13,20 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: 12.4
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.4.app
     
     - name: Build
-      run: xcodebuild clean build -workspace FirebaseChat.xcworkspace -scheme FirebaseChat
+      run: xcodebuild clean build -workspace FirebaseChat.xcworkspace -scheme "FirebaseChat" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
   Test:
     name: Test
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
       
-    - uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: 12.4
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.4.app
 
     - name: Run tests
-      run: xcodebuild test -workspace FirebaseChat.xcworkspace -scheme FirebaseChat -destination "platform=iOS Simulator,name=iPhone 12"
+      run: xcodebuild test -workspace FirebaseChat.xcworkspace -scheme "FirebaseChatTests" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
