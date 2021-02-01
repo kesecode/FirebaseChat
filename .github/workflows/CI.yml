@@ -17,5 +17,5 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app
     
     - name: Build
-      run: xcodebuild clean build test -workspace FirebaseChat.xcworkspace -scheme "FirebaseChatTests" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean build test -workspace FirebaseChat.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
