@@ -1,0 +1,34 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: 12.4
+    
+    - name: Build
+      run: xcodebuild clean build -workspace FirebaseChat.xcworkspace -scheme FirebaseChat
+  Test:
+    name: Test
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+      
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: 12.4
+
+    - name: Run tests
+      run: xcodebuild test -workspace FirebaseChat.xcworkspace -scheme FirebaseChat -destination "platform=iOS Simulator,name=iPhone 12"
+
