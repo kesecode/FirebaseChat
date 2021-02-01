@@ -18,17 +18,19 @@ final class LoginViewModel: ObservableObject {
     @Published var password: String = ""
 
     @Published var error: String = ""
+    
+    let sessionService = SessionService()
 }
 
 
 extension LoginViewModel {
     func login() {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if let error = error {
-                self.error = error.localizedDescription
-            } else {
-                self.email = ""
-                self.password = ""
+        sessionService.login(email: self.email, password: self.password) { res in
+            switch res {
+            case let .failure(err):
+                self.error = err.localizedDescription
+            case let .success(res):
+                print("Successfully logged in user with ID: ", res.user.uid)
             }
         }
     }

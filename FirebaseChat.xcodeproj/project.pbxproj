@@ -24,8 +24,8 @@
 		C0BA142E25C5C1000047E0ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA142C25C5C1000047E0ED /* User.swift */; };
 		C0BA143725C5C8D50047E0ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA143625C5C8D50047E0ED /* HomeView.swift */; };
 		C0BA143825C5C8D50047E0ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA143625C5C8D50047E0ED /* HomeView.swift */; };
-		C0BA144025C5CA130047E0ED /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA143F25C5CA130047E0ED /* Session.swift */; };
-		C0BA144125C5CA130047E0ED /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA143F25C5CA130047E0ED /* Session.swift */; };
+		C0BA144025C5CA130047E0ED /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA143F25C5CA130047E0ED /* SessionService.swift */; };
+		C0BA144125C5CA130047E0ED /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA143F25C5CA130047E0ED /* SessionService.swift */; };
 		C0BA144625C5DD360047E0ED /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA144525C5DD360047E0ED /* SignUpView.swift */; };
 		C0BA144725C5DD360047E0ED /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA144525C5DD360047E0ED /* SignUpView.swift */; };
 		C0BA144C25C5E3FA0047E0ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA144B25C5E3FA0047E0ED /* SignUpViewModel.swift */; };
@@ -38,8 +38,9 @@
 		C0BA147125C5FCE50047E0ED /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA147025C5FCE50047E0ED /* Message.swift */; };
 		C0BA147225C5FCE50047E0ED /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA147025C5FCE50047E0ED /* Message.swift */; };
 		C0BA149225C5FE490047E0ED /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0BA149425C5FE490047E0ED /* localizable.strings */; };
-		C0BA149C25C605580047E0ED /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA149B25C605580047E0ED /* Persistence.swift */; };
-		C0BA149D25C605580047E0ED /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA149B25C605580047E0ED /* Persistence.swift */; };
+		C0BA149C25C605580047E0ED /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA149B25C605580047E0ED /* PersistenceService.swift */; };
+		C0BA149D25C605580047E0ED /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA149B25C605580047E0ED /* PersistenceService.swift */; };
+		C0E18E1225C8256D004F0A76 /* MockAuthDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E1125C8256D004F0A76 /* MockAuthDataResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,14 +83,15 @@
 		C0BA142625C5C0C80047E0ED /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C0BA142C25C5C1000047E0ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C0BA143625C5C8D50047E0ED /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		C0BA143F25C5CA130047E0ED /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C0BA143F25C5CA130047E0ED /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		C0BA144525C5DD360047E0ED /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C0BA144B25C5E3FA0047E0ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		C0BA145725C5EE960047E0ED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C0BA146625C5F95C0047E0ED /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C0BA147025C5FCE50047E0ED /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C0BA149325C5FE490047E0ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
-		C0BA149B25C605580047E0ED /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C0BA149B25C605580047E0ED /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		C0E18E1125C8256D004F0A76 /* MockAuthDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthDataResult.swift; sourceTree = "<group>"; };
 		C7D01058662E0A0FC3571928 /* Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat-FirebaseChatUITests/Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F80C1C611EA5A310B5B09AB7 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
 		FCDBC1D7A52DB386B623BDD9 /* Pods_FirebaseChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,7 +166,7 @@
 				C09B185425C06261006616B1 /* Info.plist */,
 				C0BA140825C5C06F0047E0ED /* GoogleService-Info.plist */,
 				C0BA149425C5FE490047E0ED /* localizable.strings */,
-				C0BA143525C5C3FC0047E0ED /* Util */,
+				C0BA143525C5C3FC0047E0ED /* Service */,
 				C09B188925C06925006616B1 /* Model */,
 				C09B188825C06904006616B1 /* View */,
 				C0BA140D25C5C0790047E0ED /* ViewModel */,
@@ -184,6 +186,7 @@
 		C09B185C25C06262006616B1 /* FirebaseChatTests */ = {
 			isa = PBXGroup;
 			children = (
+				C0E18E1025C8255A004F0A76 /* Mocks */,
 				C09B185D25C06262006616B1 /* FirebaseChatTests.swift */,
 				C09B185F25C06262006616B1 /* Info.plist */,
 			);
@@ -228,13 +231,21 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C0BA143525C5C3FC0047E0ED /* Util */ = {
+		C0BA143525C5C3FC0047E0ED /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C0BA143F25C5CA130047E0ED /* Session.swift */,
-				C0BA149B25C605580047E0ED /* Persistence.swift */,
+				C0BA143F25C5CA130047E0ED /* SessionService.swift */,
+				C0BA149B25C605580047E0ED /* PersistenceService.swift */,
 			);
-			path = Util;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C0E18E1025C8255A004F0A76 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C0E18E1125C8256D004F0A76 /* MockAuthDataResult.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		CC1F8482326E74C263C10568 /* Pods */ = {
@@ -516,8 +527,8 @@
 				C0BA144625C5DD360047E0ED /* SignUpView.swift in Sources */,
 				C0BA144C25C5E3FA0047E0ED /* SignUpViewModel.swift in Sources */,
 				C0BA147125C5FCE50047E0ED /* Message.swift in Sources */,
-				C0BA149C25C605580047E0ED /* Persistence.swift in Sources */,
-				C0BA144025C5CA130047E0ED /* Session.swift in Sources */,
+				C0BA149C25C605580047E0ED /* PersistenceService.swift in Sources */,
+				C0BA144025C5CA130047E0ED /* SessionService.swift in Sources */,
 				C0BA146725C5F95C0047E0ED /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0BA144125C5CA130047E0ED /* Session.swift in Sources */,
+				C0BA144125C5CA130047E0ED /* SessionService.swift in Sources */,
 				C0BA144D25C5E3FA0047E0ED /* SignUpViewModel.swift in Sources */,
 				C0BA141925C5C09A0047E0ED /* LoginViewModel.swift in Sources */,
 				C0BA145925C5EE960047E0ED /* HomeViewModel.swift in Sources */,
@@ -535,7 +546,8 @@
 				C0BA147225C5FCE50047E0ED /* Message.swift in Sources */,
 				C0BA144725C5DD360047E0ED /* SignUpView.swift in Sources */,
 				C0BA142E25C5C1000047E0ED /* User.swift in Sources */,
-				C0BA149D25C605580047E0ED /* Persistence.swift in Sources */,
+				C0E18E1225C8256D004F0A76 /* MockAuthDataResult.swift in Sources */,
+				C0BA149D25C605580047E0ED /* PersistenceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ final class HomeViewModel: ObservableObject {
     @Published var user: User?
 
     init() {
-      cancellable = Session.session.sink(receiveValue: { (session) in
+      cancellable = SessionService.session.sink(receiveValue: { (session) in
           self.user = session.user
       })
     }
