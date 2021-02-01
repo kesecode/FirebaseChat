@@ -53,13 +53,12 @@ final class SessionManager: ObservableObject, SessionManaging {
               })
     }
     
-    func login(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
+    func login(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
             if let err = err {
                 completion(.failure(err))
             } else {
-                guard let res = res else { return }
-                completion(.success(res))
+                completion(.success(()))
             }
         }
     }
@@ -77,5 +76,5 @@ final class SessionManager: ObservableObject, SessionManaging {
 
 
 protocol SessionManaging {
-    func login(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void)
+    func login(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void)
 }

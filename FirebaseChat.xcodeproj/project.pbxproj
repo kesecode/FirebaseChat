@@ -10,14 +10,10 @@
 		211503D3121369120FB4D4BF /* Pods_FirebaseChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDBC1D7A52DB386B623BDD9 /* Pods_FirebaseChatTests.framework */; };
 		37692CAEC12E70AD77C1416F /* Pods_FirebaseChat_FirebaseChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECFD1B47316BF3A1B0C449 /* Pods_FirebaseChat_FirebaseChatUITests.framework */; };
 		8600ECFBBE9F4581CB4389B7 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B67FA92AB35A91450DEA93C /* Pods_FirebaseChat.framework */; };
-		C09B184C25C06260006616B1 /* FirebaseChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09B184B25C06260006616B1 /* FirebaseChatApp.swift */; };
 		C09B185025C06261006616B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09B184F25C06261006616B1 /* Assets.xcassets */; };
 		C09B185325C06261006616B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09B185225C06261006616B1 /* Preview Assets.xcassets */; };
 		C09B186925C06262006616B1 /* FirebaseChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09B186825C06262006616B1 /* FirebaseChatUITests.swift */; };
 		C0BA140925C5C06F0047E0ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0BA140825C5C06F0047E0ED /* GoogleService-Info.plist */; };
-		C0BA146725C5F95C0047E0ED /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA146625C5F95C0047E0ED /* RootView.swift */; };
-		C0BA146825C5F95C0047E0ED /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA146625C5F95C0047E0ED /* RootView.swift */; };
-		C0BA146925C5F95C0047E0ED /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA146625C5F95C0047E0ED /* RootView.swift */; };
 		C0BA149225C5FE490047E0ED /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0BA149425C5FE490047E0ED /* localizable.strings */; };
 		C0E18E3125C8950C004F0A76 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E3025C8950C004F0A76 /* SessionManager.swift */; };
 		C0E18E3C25C89557004F0A76 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E3B25C89557004F0A76 /* PersistenceManager.swift */; };
@@ -29,9 +25,12 @@
 		C0E18E6F25C89644004F0A76 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E6E25C89644004F0A76 /* LoginViewModel.swift */; };
 		C0E18E7725C8968F004F0A76 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E7625C8968F004F0A76 /* SignUpViewModel.swift */; };
 		C0E18E7F25C896AE004F0A76 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E7E25C896AE004F0A76 /* HomeViewModel.swift */; };
-		C0E18E8725C896ED004F0A76 /* MockAuthDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E8625C896ED004F0A76 /* MockAuthDataResult.swift */; };
 		C0E18E9225C89794004F0A76 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E9125C89794004F0A76 /* LoginViewModelTests.swift */; };
 		C0E18E9A25C897BA004F0A76 /* FirebaseChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18E9925C897BA004F0A76 /* FirebaseChatAppTests.swift */; };
+		C0E18ECE25C8A03A004F0A76 /* SessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18ECD25C8A03A004F0A76 /* SessionManagerMock.swift */; };
+		C0E18EF625C8AD68004F0A76 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18EF525C8AD68004F0A76 /* RootView.swift */; };
+		C0E18EFE25C8AD9A004F0A76 /* FirebaseChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18EFD25C8AD9A004F0A76 /* FirebaseChatApp.swift */; };
+		C0E18F3325C8B23B004F0A76 /* FirebaseErrorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E18F3225C8B23B004F0A76 /* FirebaseErrorMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		946AD8D18D4575F3FF5B55C9 /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 		BE48C7BC4DC2B514407F325B /* Pods-FirebaseChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatTests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChatTests/Pods-FirebaseChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		C09B184825C06260006616B1 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C09B184B25C06260006616B1 /* FirebaseChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatApp.swift; sourceTree = "<group>"; };
 		C09B184F25C06261006616B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C09B185225C06261006616B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C09B185425C06261006616B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 		C09B186825C06262006616B1 /* FirebaseChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatUITests.swift; sourceTree = "<group>"; };
 		C09B186A25C06262006616B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0BA140825C5C06F0047E0ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C0BA146625C5F95C0047E0ED /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C0BA149325C5FE490047E0ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
 		C0E18E3025C8950C004F0A76 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		C0E18E3B25C89557004F0A76 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -81,9 +78,12 @@
 		C0E18E6E25C89644004F0A76 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C0E18E7625C8968F004F0A76 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		C0E18E7E25C896AE004F0A76 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		C0E18E8625C896ED004F0A76 /* MockAuthDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthDataResult.swift; sourceTree = "<group>"; };
 		C0E18E9125C89794004F0A76 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		C0E18E9925C897BA004F0A76 /* FirebaseChatAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatAppTests.swift; sourceTree = "<group>"; };
+		C0E18ECD25C8A03A004F0A76 /* SessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerMock.swift; sourceTree = "<group>"; };
+		C0E18EF525C8AD68004F0A76 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		C0E18EFD25C8AD9A004F0A76 /* FirebaseChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatApp.swift; sourceTree = "<group>"; };
+		C0E18F3225C8B23B004F0A76 /* FirebaseErrorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorMock.swift; sourceTree = "<group>"; };
 		C7D01058662E0A0FC3571928 /* Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat-FirebaseChatUITests/Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F80C1C611EA5A310B5B09AB7 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
 		FCDBC1D7A52DB386B623BDD9 /* Pods_FirebaseChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,8 +152,8 @@
 		C09B184A25C06260006616B1 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
-				C09B184B25C06260006616B1 /* FirebaseChatApp.swift */,
-				C0BA146625C5F95C0047E0ED /* RootView.swift */,
+				C0E18EFD25C8AD9A004F0A76 /* FirebaseChatApp.swift */,
+				C0E18EF525C8AD68004F0A76 /* RootView.swift */,
 				C09B184F25C06261006616B1 /* Assets.xcassets */,
 				C09B185425C06261006616B1 /* Info.plist */,
 				C0BA140825C5C06F0047E0ED /* GoogleService-Info.plist */,
@@ -228,7 +228,8 @@
 		C0E18E1025C8255A004F0A76 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				C0E18E8625C896ED004F0A76 /* MockAuthDataResult.swift */,
+				C0E18ECD25C8A03A004F0A76 /* SessionManagerMock.swift */,
+				C0E18F3225C8B23B004F0A76 /* FirebaseErrorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -506,15 +507,15 @@
 				C0E18E3125C8950C004F0A76 /* SessionManager.swift in Sources */,
 				C0E18E3C25C89557004F0A76 /* PersistenceManager.swift in Sources */,
 				C0E18E5F25C895FD004F0A76 /* SignUpView.swift in Sources */,
-				C09B184C25C06260006616B1 /* FirebaseChatApp.swift in Sources */,
 				C0E18E5725C895CE004F0A76 /* LoginView.swift in Sources */,
 				C0E18E4725C8957B004F0A76 /* User.swift in Sources */,
 				C0E18E4F25C89599004F0A76 /* Message.swift in Sources */,
+				C0E18EFE25C8AD9A004F0A76 /* FirebaseChatApp.swift in Sources */,
 				C0E18E7F25C896AE004F0A76 /* HomeViewModel.swift in Sources */,
+				C0E18EF625C8AD68004F0A76 /* RootView.swift in Sources */,
 				C0E18E6F25C89644004F0A76 /* LoginViewModel.swift in Sources */,
 				C0E18E6725C89625004F0A76 /* HomeView.swift in Sources */,
 				C0E18E7725C8968F004F0A76 /* SignUpViewModel.swift in Sources */,
-				C0BA146725C5F95C0047E0ED /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,9 +524,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E18E9225C89794004F0A76 /* LoginViewModelTests.swift in Sources */,
-				C0E18E8725C896ED004F0A76 /* MockAuthDataResult.swift in Sources */,
 				C0E18E9A25C897BA004F0A76 /* FirebaseChatAppTests.swift in Sources */,
-				C0BA146825C5F95C0047E0ED /* RootView.swift in Sources */,
+				C0E18ECE25C8A03A004F0A76 /* SessionManagerMock.swift in Sources */,
+				C0E18F3325C8B23B004F0A76 /* FirebaseErrorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +534,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0BA146925C5F95C0047E0ED /* RootView.swift in Sources */,
 				C09B186925C06262006616B1 /* FirebaseChatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

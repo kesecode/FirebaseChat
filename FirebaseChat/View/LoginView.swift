@@ -43,8 +43,8 @@ struct LoginView: View {
               .cornerRadius(5)
           }
 
-        if (viewModel.error != "") {
-            Text(viewModel.error)
+        if (viewModel.loginError != nil) {
+            Text(viewModel.loginError!.localizedDescription)
                   .font(.system(size: 14, weight: .semibold))
                   .foregroundColor(.red)
                   .padding()

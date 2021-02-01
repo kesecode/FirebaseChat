@@ -17,7 +17,9 @@ final class LoginViewModel: ObservableObject {
 
     @Published var password: String = ""
 
-    @Published var error: String = ""
+    @Published var loginError: Error?
+    
+    @Published var loginSuccess = false
     
     private let sessionManager: SessionManaging
     
@@ -32,9 +34,9 @@ extension LoginViewModel {
         sessionManager.login(email: self.email, password: self.password) { res in
             switch res {
             case let .failure(err):
-                self.error = err.localizedDescription
-            case let .success(res):
-                print("Successfully logged in user with ID: ", res.user.uid)
+                self.loginError = err
+            case .success:
+                self.loginSuccess = true
             }
         }
     }
