@@ -21,7 +21,7 @@ struct RootView: View {
               } else {
                 LoginView()
               }
-            }.onAppear(perform: session.initialize)
+            }.onAppear(perform: session.initializeSession)
         }
     }
 }

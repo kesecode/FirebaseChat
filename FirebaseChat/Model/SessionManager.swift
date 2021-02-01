@@ -26,7 +26,7 @@ final class SessionManager: ObservableObject, SessionManaging {
 
     var handle: AuthStateDidChangeListenerHandle?
 
-    func initialize() {
+    func initializeSession() {
         if let user = Auth.auth().currentUser {
           user.reload()
         }
