@@ -33,7 +33,7 @@ extension SignUpViewModel {
             switch result {
             case let .success(res):
                 DispatchQueue.global(qos: .background).async {
-                    PersistenceService.firestore.insertUser(firstName: self.firstName, lastName: self.lastName, email: self.email, result: res)
+                    PersistenceManager.firestore.insertUser(firstName: self.firstName, lastName: self.lastName, email: self.email, result: res)
                 }
             case let .failure(err):
                 self.error = err.localizedDescription

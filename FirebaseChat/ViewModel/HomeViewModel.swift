@@ -20,7 +20,7 @@ final class HomeViewModel: ObservableObject {
     @Published var user: User?
 
     init() {
-      cancellable = SessionService.session.sink(receiveValue: { (session) in
+      cancellable = SessionManager.session.sink(receiveValue: { (session) in
           self.user = session.user
       })
     }
@@ -36,11 +36,3 @@ extension HomeViewModel {
         }
     }
 }
-
-
-/*
- sink(receiveValue: { (Session) in
-   guard let user = Session.user else { return }
-   self.user = user
- })
- */

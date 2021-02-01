@@ -1,5 +1,5 @@
 //
-//  Persistence.swift
+//  PersistenceManager.swift
 //  FirebaseChat
 //
 //  Created by David Weppler on 30.01.21.
@@ -10,15 +10,15 @@ import Foundation
 import Firebase
 
 
-final class PersistenceService: ObservableObject {
-    static let firestore = PersistenceService();
+final class PersistenceManager: ObservableObject {
+    static let firestore = PersistenceManager();
 
     let connection = Firestore.firestore()
 }
 
 // MARK: Account Management
 
-extension PersistenceService {
+extension PersistenceManager {
 
     /// Inserts new user to database
   func insertUser(firstName: String, lastName: String, email: String, result: AuthDataResult) {

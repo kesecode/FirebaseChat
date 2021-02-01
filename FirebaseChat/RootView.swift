@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct RootView: View {
-    @EnvironmentObject var session: SessionService
+    @EnvironmentObject var session: SessionManager
 
     @AppStorage("login_state") var loginState = false
 

@@ -1,5 +1,5 @@
 //
-//  Session.swift
+//  SessionManager.swift
 //  FirebaseChat
 //
 //  Created by David Weppler on 30.01.21.
@@ -14,13 +14,13 @@ import SwiftUI
 import Combine
 
 
-final class SessionService: ObservableObject, SessionServiceProtocol {
-    static var session = PassthroughSubject<SessionService, Never>()
+final class SessionManager: ObservableObject, SessionManaging {
+    static var session = PassthroughSubject<SessionManager, Never>()
 
     @AppStorage("login_state") var loginState = false
 
     @Published var user: User? {  didSet  {
-          SessionService.session.send(self)
+          SessionManager.session.send(self)
         }
     }
 
@@ -37,7 +37,7 @@ final class SessionService: ObservableObject, SessionServiceProtocol {
         loginState = false;
               handle = Auth.auth().addStateDidChangeListener({(auth, user) in
                   if let user = user {
-                    PersistenceService.firestore.getUser(uid: user.uid, completion: { res in
+                    PersistenceManager.firestore.getUser(uid: user.uid, completion: { res in
                         switch res {
                         case let .failure(err):
                             print(err)
@@ -76,6 +76,6 @@ final class SessionService: ObservableObject, SessionServiceProtocol {
 }
 
 
-protocol SessionServiceProtocol {
+protocol SessionManaging {
     func login(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void)
 }

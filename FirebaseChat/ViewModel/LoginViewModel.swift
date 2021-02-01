@@ -19,13 +19,17 @@ final class LoginViewModel: ObservableObject {
 
     @Published var error: String = ""
     
-    let sessionService = SessionService()
+    private let sessionManager: SessionManaging
+    
+    init(sessionManager: SessionManaging = SessionManager()) {
+        self.sessionManager = sessionManager
+    }
 }
 
 
 extension LoginViewModel {
     func login() {
-        sessionService.login(email: self.email, password: self.password) { res in
+        sessionManager.login(email: self.email, password: self.password) { res in
             switch res {
             case let .failure(err):
                 self.error = err.localizedDescription

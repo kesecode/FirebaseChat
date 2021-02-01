@@ -1,18 +1,23 @@
 //
-//  FirebaseChatTests.swift
+//  LoginViewModelTests.swift
 //  FirebaseChatTests
 //
-//  Created by David Weppler on 26.01.21.
+//  Created by David Weppler on 01.02.21.
 //
 
 import XCTest
-@testable import FirebaseChat
 
-class FirebaseChatTests: XCTestCase {
-
+class LoginViewModelTests: XCTestCase {
+    
+    override func setUp() {
+        
+    }
+    
+    /*
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
+
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -29,5 +34,6 @@ class FirebaseChatTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+     */
 
 }

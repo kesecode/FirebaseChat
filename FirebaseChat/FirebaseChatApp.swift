@@ -18,7 +18,7 @@ struct FirebaseChatApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView().environmentObject(SessionService())
+            RootView().environmentObject(SessionManager())
         }
     }
 }
