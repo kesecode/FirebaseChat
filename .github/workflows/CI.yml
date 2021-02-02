@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Checkout
+        name: Checkout
       
       - uses: norio-nomura/action-swiftlint@3.2.1
-      - name: SwiftLint
+        name: SwiftLint
   Test:
     name: Test
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout
+      name: Checkout
     
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
