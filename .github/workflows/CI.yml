@@ -27,5 +27,5 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
     
     - name: Run Unit Tests
-      run: xcodebuild test -scheme FirebaseChat -project FirebaseChat.xcodeproj -destination "platform=iOS Simulator,name=iPhone 12, OS=14.1" | xcpretty && exit ${PIPESTATUS[0]}
+      run: xcodebuild test -scheme FirebaseChat -project FirebaseChat.xcodeproj -destination "platform=iOS Simulator,name=iPhone 12" | xcpretty && exit ${PIPESTATUS[0]}
 
