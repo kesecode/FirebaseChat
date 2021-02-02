@@ -21,7 +21,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-      name: Checkout
+    - name: Checkout
     
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
