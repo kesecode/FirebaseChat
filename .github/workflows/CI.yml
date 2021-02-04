@@ -17,6 +17,8 @@ jobs:
       
       - uses: norio-nomura/action-swiftlint@3.2.1
         name: SwiftLint
+        with:
+          args: --strict
   Test:
     name: Test
     runs-on: macos-latest
