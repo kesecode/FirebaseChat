@@ -37,7 +37,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build
-        path: build/
+        path: build/Build/Products/
   test:
     needs: build
     name: Test
@@ -54,12 +54,13 @@ jobs:
         name: build
     
     - name: Run Unit Tests
-      run: xcodebuild test-without-building -xctestrun Build/Products/*.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
+      run: xcodebuild test-without-building -xctestrun *.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
    
     - uses: actions/upload-artifact@v2
+      name: Upload XCResult
       with:
-        name: result
-        path: result/
+        name: xcresult
+        path: result/Logs/Test/
   codeCoverage:
       needs: test
       name: Code Coverage
@@ -69,17 +70,15 @@ jobs:
         name: Checkout
         
       - uses: actions/download-artifact@v2
+        name: Download XCResult
         with:
-          name: build
-
-      - name: Homebrew
-        uses: artemnovichkov/action-homebrew@0.1.0
+          name: xcresult
       
       - name: Select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
       
       - name: Check code coverage
-        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > coverage/result.json 
+        run: xcrun xccov view --report --json *.xcresult > coverage/result.json 
 
       - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
         name: Send data
@@ -87,7 +86,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: coverage
-          path: coverage/      
+          path: coverage/
   uploadResult:
       needs: codeCoverage
       name: Upload Result
