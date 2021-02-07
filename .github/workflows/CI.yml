@@ -84,6 +84,7 @@ jobs:
         name: Send data
       
       - uses: actions/upload-artifact@v2
+        name: Upload result.json
         with:
           name: coverage
           path: coverage/
@@ -96,6 +97,7 @@ jobs:
         name: Checkout
         
       - uses: actions/download-artifact@v2
+        name: Download result.json
         with:
           name: coverage
 
