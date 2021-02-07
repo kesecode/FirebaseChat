@@ -52,14 +52,13 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: build
-        path: build/
     
     - name: Run Unit Tests
-      run: xcodebuild test-without-building -xctestrun /build/Build/Products/*.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
+      run: xcodebuild test-without-building -xctestrun Build/Products/*.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
    
     - uses: actions/upload-artifact@v2
       with:
-        name: my-artifact
+        name: result
         path: result/
   codeCoverage:
       needs: test
@@ -68,6 +67,10 @@ jobs:
       steps:
       - uses: actions/checkout@v2
         name: Checkout
+        
+      - uses: actions/download-artifact@v2
+        with:
+          name: build
 
       - name: Homebrew
         uses: artemnovichkov/action-homebrew@0.1.0
