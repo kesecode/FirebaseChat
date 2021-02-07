@@ -45,14 +45,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       name: Checkout
-
-    - run: mkdir -p build/
     
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
     
+    - uses: actions/download-artifact@v2
+      with:
+        name: my-artifact
+        path: build/
+    
     - name: Run Unit Tests
-      run: xcodebuild test-without-building -xctestrun build/Build/Products/*.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
+      run: xcodebuild test-without-building -xctestrun /build/Build/Products/*.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
    
     - uses: actions/upload-artifact@v2
       with:
