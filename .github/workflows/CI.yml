@@ -58,9 +58,36 @@ jobs:
       steps:
       - uses: actions/checkout@v2
         name: Checkout
+
+      - name: Homebrew
+        uses: artemnovichkov/action-homebrew@0.1.0
       
       - name: Select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
       
       - name: Check code coverage
-        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json
+        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json \
+          brew install jq
+          COVERAGE=`jq -r '.lineCoverage' result.json`
+      
+      - name: Share Data
+      - uses: nick-invision/persist-action-data@v1
+        with:
+          data: ${{ COVERAGE }}
+          variable: COVERAGE
+      
+  Send data to REST API:
+      name: Send data to REST API
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
+      - name: Retrieve Data
+      - uses: nick-invision/persist-action-data@v1
+        with:
+          data: ${{ COVERAGE }}
+          retrieve_variables: COVERAGE
+
+      - name: Send data
+        run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
