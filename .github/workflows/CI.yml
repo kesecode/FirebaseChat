@@ -8,7 +8,7 @@ on:
       - release
 
 jobs:
-  Code Quality:
+  codeQuality:
     name: Code Quality
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
         name: SwiftLint
         with:
           args: --strict
-  Build:
+  build:
     name: Build
     runs-on: macos-latest
     steps:
@@ -38,7 +38,7 @@ jobs:
       with:
         name: my-artifact
         path: build/
-  Test:
+  test:
     name: Test
     runs-on: macos-latest
     steps:
@@ -57,7 +57,7 @@ jobs:
       with:
         name: my-artifact
         path: result/
-  Code Coverage:
+  codeCoverage:
       name: Code Coverage
       runs-on: macos-latest
       steps:
