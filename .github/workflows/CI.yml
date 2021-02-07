@@ -89,7 +89,7 @@ jobs:
           name: coverage
           path: coverage/      
   uploadResult:
-      needs: test
+      needs: codeCoverage
       name: Upload Result
       runs-on: ubuntu-latest
       steps:
