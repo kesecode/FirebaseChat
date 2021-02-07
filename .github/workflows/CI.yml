@@ -36,7 +36,7 @@ jobs:
     
     - uses: actions/upload-artifact@v2
       with:
-        name: my-artifact
+        name: build
         path: build/
   test:
     needs: build
@@ -51,7 +51,7 @@ jobs:
     
     - uses: actions/download-artifact@v2
       with:
-        name: my-artifact
+        name: build
         path: build/
     
     - name: Run Unit Tests
