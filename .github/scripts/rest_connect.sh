@@ -3,6 +3,8 @@
 USER=$1
 PASSWORD=$2
 
+COVERAGE=`jq -r '.lineCoverage' result.json`
+
 TOKEN=$(curl --location --request POST 'rest.kesecode.io/api/auth' --header 'Authorization: '$USER' '$PASSWORD'' | jq -r '.token')
 
 echo $COVERAGE
