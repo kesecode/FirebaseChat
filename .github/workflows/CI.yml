@@ -19,27 +19,27 @@ jobs:
         name: SwiftLint
         with:
           args: --strict
-  build:
-    name: Build
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v2
-      name: Checkout
+  #build:
+   # name: Build
+    #runs-on: macos-latest
+    #steps:
+    #- uses: actions/checkout@v2
+    #  name: Checkout
     
-    - run: mkdir -p build/
+    #- run: mkdir -p build/
     
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
+    #- name: Select Xcode
+     # run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
     
-    - name: Build
-      run: xcodebuild build-for-testing -workspace FirebaseChat.xcworkspace -scheme FirebaseChat -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath build
+    #- name: Build
+     # run: xcodebuild build-for-testing -workspace FirebaseChat.xcworkspace -scheme FirebaseChat -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath build
     
-    - uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: build/
+    #- uses: actions/upload-artifact@v2
+     # with:
+      #  name: my-artifact
+       # path: build/
   test:
-    needs: build
+   # needs: build
     name: Test
     runs-on: macos-latest
     steps:
