@@ -1,4 +1,3 @@
-![Continuous Integration](https://github.com/kesecode/FirebaseChat/workflows/Continuous%20Integration/badge.svg?branch=master)
 ![](https://img.shields.io/github/commit-activity/w/kesecode/FirebaseChat)
 
 <a href="http://www.wtfpl.net/"><img
