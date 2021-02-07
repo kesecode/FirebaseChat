@@ -74,9 +74,9 @@ jobs:
         run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json \
           brew install jq
           COVERAGE=`jq -r '.lineCoverage' result.json`
-      
-      - name: Share Data
+
       - uses: nick-invision/persist-action-data@v1
+        name: Share Data
         with:
           data: ${{ COVERAGE }}
           variable: COVERAGE
@@ -85,14 +85,14 @@ jobs:
       name: Send data to REST API
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v2
-        name: Checkout
+        - uses: actions/checkout@v2
+          name: Checkout
 
-      - uses: nick-invision/persist-action-data@v1
-        name: Retrieve Data
-        with:
-          data: ${{ COVERAGE }}
-          retrieve_variables: COVERAGE
+        - uses: nick-invision/persist-action-data@v1
+          name: Retrieve Data
+          with:
+            data: ${{ COVERAGE }}
+            retrieve_variables: COVERAGE
 
-      - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
-        name: Send data
+        - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
+          name: Send data
