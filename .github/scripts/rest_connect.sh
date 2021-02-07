@@ -1,6 +1,5 @@
 #!/bin/sh
-brew install curl
-brew install jq
+sudo apt-get -y install jq
 
 COVERAGE=`jq -r '.lineCoverage' result.json`
 
