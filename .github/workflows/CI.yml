@@ -2,7 +2,10 @@ name: CI
 
 on:
   pull_request:
-    branches: [ master develop release ]
+    branches:
+      - master
+      - develop
+      - release
 
 jobs:
   Code Quality:
@@ -14,6 +17,8 @@ jobs:
       
       - uses: norio-nomura/action-swiftlint@3.2.1
         name: SwiftLint
+        with:
+          args: --strict
   Build:
     name: Build
     runs-on: macos-latest
