@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: CI
 
 on:
   pull_request:
@@ -8,8 +8,8 @@ on:
       - release
 
 jobs:
-  Lint:
-    name: Lint
+  Code Quality:
+    name: Code Quality
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,16 +19,80 @@ jobs:
         name: SwiftLint
         with:
           args: --strict
+  Build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout
+    
+    - run: mkdir -p build/
+    
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
+    
+    - name: Build
+      run: xcodebuild build-for-testing -workspace FirebaseChat.xcworkspace -scheme FirebaseChat -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath build
+    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: build/
   Test:
     name: Test
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
       name: Checkout
+
+    - run: mkdir -p build/
     
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
     
     - name: Run Unit Tests
-      run: xcodebuild test -scheme FirebaseChat -workspace FirebaseChat.xcworkspace -destination "platform=iOS Simulator,name=iPhone 12" | xcpretty && exit ${PIPESTATUS[0]}
+      run: xcodebuild test-without-building -xctestrun build/Build/Products/*.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
+   
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: result/
+  Code Coverage:
+      name: Code Coverage
+      runs-on: macos-latest
+      steps:
+      - uses: actions/checkout@v2
+        name: Checkout
 
+      - name: Homebrew
+        uses: artemnovichkov/action-homebrew@0.1.0
+      
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
+      
+      - name: Check code coverage
+        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json \
+          brew install jq
+          COVERAGE=`jq -r '.lineCoverage' result.json`
+      
+      - name: Share Data
+      - uses: nick-invision/persist-action-data@v1
+        with:
+          data: ${{ COVERAGE }}
+          variable: COVERAGE
+      
+  Send data to REST API:
+      name: Send data to REST API
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
+      - name: Retrieve Data
+      - uses: nick-invision/persist-action-data@v1
+        with:
+          data: ${{ COVERAGE }}
+          retrieve_variables: COVERAGE
+
+      - name: Send data
+        run: git update-index --chmod +x ./.github/scripts/rest_connect.sh

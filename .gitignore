@@ -68,3 +68,5 @@ iOSInjectionProject/
 #FirebaseChat/GoogleService-Info.plist
 
 
+build/
+result/
