@@ -39,6 +39,7 @@ jobs:
         name: my-artifact
         path: build/
   test:
+    needs: build
     name: Test
     runs-on: macos-latest
     steps:
@@ -58,6 +59,7 @@ jobs:
         name: my-artifact
         path: result/
   codeCoverage:
+      needs: test
       name: Code Coverage
       runs-on: macos-latest
       steps:
