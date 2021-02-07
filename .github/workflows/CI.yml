@@ -106,6 +106,9 @@ jobs:
         name: Download result.json
         with:
           name: coverage
+          
+      - name: DEBUG ls
+        run: ls
 
       - run: chmod +x ./.github/scripts/rest_connect.sh; cd ./.github/scripts/; ./rest_connect.sh
         name: Upload data
