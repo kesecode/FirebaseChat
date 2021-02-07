@@ -79,7 +79,26 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
       
       - name: Check code coverage
-        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json 
+        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > coverage/result.json 
 
       - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
         name: Send data
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage/      
+  uploadResult:
+      needs: test
+      name: Upload Result
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+        
+      - uses: actions/download-artifact@v2
+        with:
+          name: coverage
+
+      - run: chmod +x ./.github/scripts/rest_connect.sh; cd /.github/scripts/; ./rest_connect.sh
+        name: Upload data
