@@ -108,7 +108,5 @@ jobs:
         run: ls
 
       - name: Upload data
-        run: chmod +x .github/scripts/rest_connect.sh; .github/scripts/rest_connect.sh
-        env:
-          REST_USER: ${{ REST_USER }}
-          REST_PASSWORD: ${{ REST_PASSWORD }}
+        run: chmod +x .github/scripts/rest_connect.sh; REST_USER=${{ REST_USER }}; REST_PASSWORD=${{ REST_PASSWORD }}; .github/scripts/rest_connect.sh
+
