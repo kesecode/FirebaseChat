@@ -85,9 +85,6 @@ jobs:
       
       - name: Copy Result
         run: mkdir coverage; cp result.json coverage/
-
-      - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
-        name: Send data
       
       - uses: actions/upload-artifact@v2
         name: Upload result.json
