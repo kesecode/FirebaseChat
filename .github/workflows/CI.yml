@@ -71,28 +71,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
       
       - name: Check code coverage
-        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json \
-          brew install jq
-          COVERAGE=`jq -r '.lineCoverage' result.json`
+        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json 
 
-      - uses: nick-invision/persist-action-data@v1
-        name: Share Data
-        with:
-          data: ${{ COVERAGE }}
-          variable: COVERAGE
-      
-  Send data to REST API:
-      name: Send data to REST API
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-          name: Checkout
-
-        - uses: nick-invision/persist-action-data@v1
-          name: Retrieve Data
-          with:
-            data: ${{ COVERAGE }}
-            retrieve_variables: COVERAGE
-
-        - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
-          name: Send data
+      - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
+        name: Send data
