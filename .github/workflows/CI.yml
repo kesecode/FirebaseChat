@@ -88,11 +88,11 @@ jobs:
       - uses: actions/checkout@v2
         name: Checkout
 
-      - name: Retrieve Data
       - uses: nick-invision/persist-action-data@v1
+        name: Retrieve Data
         with:
           data: ${{ COVERAGE }}
           retrieve_variables: COVERAGE
 
-      - name: Send data
-        run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
+      - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
+        name: Send data
