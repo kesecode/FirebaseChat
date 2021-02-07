@@ -107,8 +107,8 @@ jobs:
       - name: DEBUG ls
         run: ls
 
-      - run: chmod +x .github/scripts/rest_connect.sh; .github/scripts/rest_connect.sh
-        name: Upload data
+      - name: Upload data
+        run: chmod +x .github/scripts/rest_connect.sh; .github/scripts/rest_connect.sh
         env:
           REST_USER: ${{ REST_USER }}
           REST_PASSWORD: ${{ REST_PASSWORD }}
