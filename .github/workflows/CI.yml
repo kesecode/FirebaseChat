@@ -107,5 +107,5 @@ jobs:
       - name: DEBUG ls
         run: ls
 
-      - run: chmod +x ./.github/scripts/rest_connect.sh; cd ./.github/scripts/; ./rest_connect.sh
+      - run: COVERAGE=`jq -r '.lineCoverage' result.json`; chmod +x ./.github/scripts/rest_connect.sh; cd ./.github/scripts/; ./rest_connect.sh
         name: Upload data
