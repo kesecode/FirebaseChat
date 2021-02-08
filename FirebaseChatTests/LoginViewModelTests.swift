@@ -10,7 +10,6 @@ import XCTest
 @testable import FirebaseChat
 
 class LoginViewModelTests: XCTestCase {
-    
     var viewModel: LoginViewModel!
     var sessionManagerMock: SessionManagerMock!
     
