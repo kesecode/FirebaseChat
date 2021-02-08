@@ -1,6 +1,7 @@
 ![CI](https://github.com/kesecode/FirebaseChat/workflows/CI/badge.svg)
 ![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Frest.kesecode.io%2Fapi%2Fget%2FfirebaseChat)
-![Commit](https://img.shields.io/github/commit-activity/w/kesecode/FirebaseChat)
+![Commit activity](https://img.shields.io/github/commit-activity/w/kesecode/FirebaseChat)
+![Last commit](https://img.shields.io/github/last-commit/kesecode/FirebaseChat)
 
 
 <a href="http://www.wtfpl.net/"><img
