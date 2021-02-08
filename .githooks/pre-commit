@@ -2,7 +2,7 @@
 LC_ALL=C
 
 local_branch="$(git rev-parse --abbrev-ref HEAD)"
-valid_branch_regex="^(feature|release|hotfix)\/[a-z0-9._-]+$"
+valid_branch_regex="(^(feature|release|hotfix)\/[a-z0-9._-]+$)|^(main|develop)$"
 
 message="There is something wrong with your branch name. Branch names in this project should begin with feature-/release-/hotfix-. Your commit will be rejected. You should rename your branch to a valid name and try again."
 
