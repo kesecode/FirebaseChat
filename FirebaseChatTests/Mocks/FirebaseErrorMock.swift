@@ -7,8 +7,6 @@
 
 import Foundation
 
-
 final class FirebaseErrorMock: Error {
     let localizedDescription = "TEST: Error"
 }
-

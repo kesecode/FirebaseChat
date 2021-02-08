@@ -1,14 +1,15 @@
 name: CI
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - master
       - develop
-      - release
+      - release/*
 
 jobs:
-  Code Quality:
+  codeQuality:
     name: Code Quality
     runs-on: ubuntu-latest
     steps:
@@ -17,9 +18,8 @@ jobs:
       
       - uses: norio-nomura/action-swiftlint@3.2.1
         name: SwiftLint
-        with:
-          args: --strict
-  Build:
+        
+  build:
     name: Build
     runs-on: macos-latest
     steps:
@@ -35,64 +35,83 @@ jobs:
       run: xcodebuild build-for-testing -workspace FirebaseChat.xcworkspace -scheme FirebaseChat -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath build
     
     - uses: actions/upload-artifact@v2
+      name: Upload Build
       with:
-        name: my-artifact
-        path: build/
-  Test:
+        name: build
+        path: build/Build/Products/
+    
+  test:
+    needs: build
     name: Test
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
       name: Checkout
-
-    - run: mkdir -p build/
     
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
     
+    - uses: actions/download-artifact@v2
+      name: Download Build
+      with:
+        name: build
+    
     - name: Run Unit Tests
-      run: xcodebuild test-without-building -xctestrun build/Build/Products/*.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
+      run: xcodebuild test-without-building -xctestrun *.xctestrun -destination "platform=iOS Simulator,name=iPhone 12" -derivedDataPath result -enableCodeCoverage yes
    
     - uses: actions/upload-artifact@v2
+      name: Upload XCResult
       with:
-        name: my-artifact
-        path: result/
-  Code Coverage:
+        name: xcresult
+        path: result/Logs/Test/
+ 
+  codeCoverage:
+      needs: test
       name: Code Coverage
       runs-on: macos-latest
       steps:
       - uses: actions/checkout@v2
         name: Checkout
-
-      - name: Homebrew
-        uses: artemnovichkov/action-homebrew@0.1.0
+        
+      - uses: actions/download-artifact@v2
+        name: Download XCResult
+        with:
+          name: xcresult
       
       - name: Select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
       
       - name: Check code coverage
-        run: xcrun xccov view --report --json result/Logs/Test/*.xcresult > result.json \
-          brew install jq
-          COVERAGE=`jq -r '.lineCoverage' result.json`
-
-      - uses: nick-invision/persist-action-data@v1
-        name: Share Data
-        with:
-          data: ${{ COVERAGE }}
-          variable: COVERAGE
+        run: xcrun xccov view --report --json *.xcresult > result.json
       
-  Send data to REST API:
-      name: Send data to REST API
+      - name: Copy Result
+        run: mkdir coverage; cp result.json coverage/
+      
+      - uses: actions/upload-artifact@v2
+        name: Upload result.json
+        with:
+          name: coverage
+          path: coverage/
+  
+  uploadResult:
+      needs: codeCoverage
+      name: Upload Result
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
-          name: Checkout
+      - uses: actions/checkout@v2
+        name: Checkout
+        
+      - uses: actions/download-artifact@v2
+        name: Download result.json
+        with:
+          name: coverage
+          
+      - name: DEBUG ls
+        run: ls
 
-        - uses: nick-invision/persist-action-data@v1
-          name: Retrieve Data
-          with:
-            data: ${{ COVERAGE }}
-            retrieve_variables: COVERAGE
+      - name: Upload data
+        run: chmod +x .github/scripts/rest_connect.sh; sh .github/scripts/rest_connect.sh
+        env:
+          USER: ${{ secrets.REST_USER }}
+          PASSWORD: ${{ secrets.REST_PASSWORD }}
 
-        - run: git update-index --chmod +x ./.github/scripts/rest_connect.sh
-          name: Send data
