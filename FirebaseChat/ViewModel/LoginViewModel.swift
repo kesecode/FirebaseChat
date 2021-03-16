@@ -11,7 +11,7 @@ import Firebase
 
 import Combine
 
-
+/// LoginViewModel
 final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
 
@@ -30,6 +30,7 @@ final class LoginViewModel: ObservableObject {
 
 
 extension LoginViewModel {
+    /// Passes the credentials given by the user to the SessionManager to login and start a new session.
     func login() {
         sessionManager.login(email: self.email, password: self.password) { res in
             switch res {

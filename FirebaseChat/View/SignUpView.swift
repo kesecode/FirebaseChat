@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct SignUpView: View {
     @StateObject var viewModel = SignUpViewModel()
 

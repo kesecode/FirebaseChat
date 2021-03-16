@@ -9,7 +9,6 @@ import Foundation
 
 import Firebase
 
-
 final class PersistenceManager: ObservableObject {
     static let firestore = PersistenceManager();
 
@@ -28,7 +27,7 @@ extension PersistenceManager {
           "email_address": email
       ])
   }
-
+    
   func getUser(uid: String, completion: @escaping (Result<User, Error>) -> Void) {
         connection.collection("User").document(uid).getDocument { (documentSnapshot, err) in
             if let err = err {

@@ -13,7 +13,7 @@ import SwiftUI
 
 import Combine
 
-
+/// Handles the session and provides methods to sign in existing users and sign up new users
 final class SessionManager: ObservableObject, SessionManaging {
     static var session = PassthroughSubject<SessionManager, Never>()
 
@@ -53,6 +53,15 @@ final class SessionManager: ObservableObject, SessionManaging {
               })
     }
     
+    /// Connects with Firebase to sign in a user.
+    ///
+    /// Some description text yeah yeah
+    /// Tryin out if it works
+    ///
+    /// - Parameters:
+    ///   - email: Users email address
+    ///   - password: Users password
+    ///   - completion: Handles the result given back by the Firebase sign in method
     func login(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
             if let err = err {
