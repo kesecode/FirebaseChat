@@ -5,7 +5,6 @@
 //  Created by David Weppler on 30.01.21.
 //
 
-
 struct Message {
     var uid: String
     var message: String?

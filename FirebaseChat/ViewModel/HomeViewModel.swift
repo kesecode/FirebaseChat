@@ -11,7 +11,6 @@ import Firebase
 
 import Combine
 
-
 final class HomeViewModel: ObservableObject {
     @AppStorage("login_state") var loginState = false
 

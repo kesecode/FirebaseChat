@@ -5,7 +5,6 @@
 //  Created by David Weppler on 30.01.21.
 //
 
-
 struct User: Codable {
     var uid: String
     var firstName: String

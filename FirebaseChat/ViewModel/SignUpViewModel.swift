@@ -11,7 +11,6 @@ import Firebase
 
 import Combine
 
-
 final class SignUpViewModel: ObservableObject {
     @Published var email: String = ""
 
